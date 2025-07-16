@@ -1,10 +1,19 @@
 import React from "react";
 import PortfolioMasonry from "../components/Grid.js"
 import { useEffect, useState } from "react";
-import axios from "axios";
+
 import {fetchProject} from "../api/projets.js"
 import Projets from "../components/Projets.js";
+type Projets = {
+  title: string;
+  description: string;
+  technologies: string;
+  github_link?: string;
+  demo_link?: string;
+  preview: string;
+  categorie:string;
 
+}
 const ProjectsPage: React.FC = () => {
   const [projects, setProjects] = useState([]);
 
@@ -28,7 +37,7 @@ setProjects(res.data);
   return (
     <>
      <h2 className="text-3xl font-bold text-center text-white">Mes projets</h2>
-      <PortfolioMasonry items={projects} renderItem={(projet)=><Projets {...projet}/>} />
+      <PortfolioMasonry items={projects} renderItem={(projet:Projets)=><Projets {...projet}/>} />
     </>
     
   );

@@ -5,6 +5,12 @@ import { useEffect, useState } from "react";
 
 import {fetchCertification} from "../api/projets.js"
 import Certification from "../components/Certifcation.js";
+type CertificationProps = {
+    title:string,
+    preview:string,
+    link:string,
+    description:string,
+}
 
 const CertificationPage: React.FC = () => {
   const [certifications, setCertifications] = useState([]);
@@ -29,7 +35,7 @@ setCertifications(res.data);
   return (
     <>
      <h2 className="text-3xl font-bold text-center text-white">Mes certifications</h2>
-      <Grid items={certifications} renderItem={(certification)=><Certification {...certification}/>}/>
+      <Grid items={certifications} renderItem={(certification:CertificationProps)=><Certification {...certification}/>}/>
       </>
     
   );

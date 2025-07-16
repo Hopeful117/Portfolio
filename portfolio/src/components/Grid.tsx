@@ -13,8 +13,8 @@ function PortfolioMasonry<T>({ items,renderItem } : {  items: T[];
 }){return(
   <Masonry
     breakpointCols={breakpointColumnsObj}
-    className="flex ml-4 w-auto h-screen mt-10"
-    columnClassName="pl-4 flex flex-col space-y-4"
+    className="flex w-auto md:h-screen mt-10 mr-5 ml-5"
+    columnClassName="flex flex-col md:space-y-4 md:m-5 gap-10"
   >
     {items.map((item,index) => (
     

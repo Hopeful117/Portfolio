@@ -16,28 +16,28 @@ const HomeSlider:React.FC = () => {
         pagination={{ clickable: true }}
         mousewheel
         keyboard
-        className="w-full"
+        className="w-full h-view"
       >
         <SwiperSlide>
-<section className="flex justify-center items-center h-full bg-gray-900 text-white w-3/6 flex-col ml-auto mr-auto">
-  <h1 className="text-4xl font-bold mb-7">Bonjour, je suis Ludovic Brot</h1>
-  <p className="text-lg mb-4">
+<section className="flex justify-center items-center h-full bg-gray-900 text-white md:w-3/6 flex-col ml-auto mr-auto mt-5">
+  <h1 className="text-4xl font-bold mb-7 text-center">Bonjour, je suis Ludovic Brot</h1>
+  <p className="text-lg mb-4 text-center">
     Développeur full-stack spécialisé dans le duo puissant <strong>Django</strong> et <strong>React</strong>.  
     J'aime construire des applications web robustes et performantes où le back-end Django assure la gestion efficace des données, la sécurité et l’API,  
     tandis que React offre une interface utilisateur dynamique et réactive.
   </p>
-  <p className="text-lg mb-4">
+  <p className="text-lg mb-4 text-center">
     Grâce à cette combinaison, je crée des solutions modernes, évolutives et maintenables,  
     adaptées aux besoins métiers, avec une attention particulière portée à la qualité du code et à l’expérience utilisateur.
   </p>
-  <p className="text-lg  mb-4">
+  <p className="text-lg  mb-4 text-center">
     Explorez mes projets pour découvrir comment j’allie ces technologies pour transformer des idées en applications concrètes.  
     N’hésitez pas à me contacter pour collaborer sur vos prochains défis !
   </p>
 </section>
         </SwiperSlide>
         <SwiperSlide>
-          <section className="flex justify-center items-center h-full bg-gray-900 text-white w-3/6 flex-col ml-auto mr-auto">
+          <section className="flex justify-center items-center h-full bg-gray-900 text-white md:w-3/6 flex-col ml-auto mr-auto text-center mt-5">
   <h1 className="text-4xl font-bold mb-7">Mon parcours de reconversion</h1>
   <p className="text-lg mb-4">
     Après plusieurs années dans un autre domaine, j'ai entamé une reconversion vers le développement web avec une volonté claire :
@@ -52,13 +52,13 @@ const HomeSlider:React.FC = () => {
     où je développe des compétences concrètes en <strong>JavaScript, React, Django</strong> et dans la conception d'applications complètes,  
     tout en intégrant les bonnes pratiques de sécurité, d’accessibilité et de versioning.
   </p>
-  <p className="text-lg">
+  <p className="text-lg mb-20">
     Cette reconversion est un véritable projet de vie. Elle me permet aujourd’hui d’unir logique, rigueur et créativité au service de projets web à fort impact.
   </p>
 </section>
         </SwiperSlide>
         <SwiperSlide>
-          <section className="flex justify-center items-center h-full bg-gray-900 text-white w-3/6 flex-col ml-auto mr-auto">
+          <section className="flex justify-center items-center h-full bg-gray-900 text-white  md:w-3/6 flex-col ml-auto mr-auto text-center mt-5">
   <h2 className="text-3xl font-bold mb-7">La suite de mon parcours</h2>
   <p className="text-lg mb-4">
     Mon objectif est de continuer à renforcer mes compétences et à élargir mon expertise.  

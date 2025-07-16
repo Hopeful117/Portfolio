@@ -4,9 +4,9 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section className="flex justify-center items-center h-screen bg-gray-900 text-white">
+    <section className="flex justify-center items-center pb-1000 bg-gray-900 text-white">
       <div className="w-4/5 max-w-xl text-center">
-        <h1 className="text-4xl font-bold mb-6">Me contacter</h1>
+        <h1 className="text-4xl font-bold mb-6 mt-5">Me contacter</h1>
         <p className="text-lg mb-8">
           Vous souhaitez collaborer, discuter d’un projet ou simplement échanger ?
           Retrouvez-moi sur les plateformes ci-dessous.

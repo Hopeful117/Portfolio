@@ -4,15 +4,15 @@ import { NavLink } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
-    <header className="w-full bg-white dark:bg-gray-900 shadow-md">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <header className="w-full bg-white dark:bg-gray-800 shadow-md">
+      <div className="md:max-w-6xl md:mx-auto px-4 py-4 flex md:flex-row md:items-center md:justify-between flex-col">
       
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white text-center">
           Ludovic Brot
         </h1>
 
         
-        <nav className="space-x-6 hidden md:flex">
+        <nav className="md:space-x-6 flex md:justify-between md:flex-row  justify-between   md:mt-0 mt-5 font-bold">
       
           
            <NavLink className="text-gray-700 dark:text-gray-200 hover:underline" to={'/'}>Accueil</NavLink>
