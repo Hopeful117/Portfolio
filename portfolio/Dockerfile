@@ -1,5 +1,5 @@
-FROM node:20-alipine as build
+FROM node:20-alpine as build
 WORKDIR /app
-COPY ./ ./
-RUN npm install && npm run build
+COPY . .
+CMD ["npm", "run","dev"]
 

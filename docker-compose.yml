@@ -1,0 +1,27 @@
+
+services:
+  frontend:
+    build:
+      context: ./portfolio    # chemin vers le Dockerfile frontend
+    ports:
+      - "3125:3125"         # expose frontend sur localhost:3000
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./portfolio-api    # chemin vers le Dockerfile backend
+    command: python manage.py runserver 0.0.0.0:5125
+    volumes:
+      - ./portfolio-api:/app
+      - ./static:/app/static    # monte le code backend
+    ports:
+      - "5125:5125"
+    
+
+ 
+    
+
+  
+
+
+  
