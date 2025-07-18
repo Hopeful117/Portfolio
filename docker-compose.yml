@@ -4,7 +4,8 @@ services:
     build:
       context: ./portfolio    # chemin vers le Dockerfile frontend
     ports:
-      - "3125:3125"         # expose frontend sur localhost:3000
+      - "3125:3125"
+      - "80:80"         # expose frontend sur localhost:3000
     restart: unless-stopped
 
   web:
