@@ -17,6 +17,16 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      
+      - name: debug
+        run: |
+         ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << EOF
+         echo "CWD before cd: $(pwd)"
+         cd ${{ secrets.VPS_PATH }} || (echo "Dossier introuvable"; exit 1)
+         echo "CWD after cd: $(pwd)"
+         ls -l
+         EOF
+
       - name: 🚀 Deploy over SSH
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << EOF
