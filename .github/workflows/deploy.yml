@@ -29,6 +29,6 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ${{ secrets.VPS_PATH }} || { echo "Directory not found"; exit 1; }
+            cd ${{ secrets.VPS_PATH }} 
             docker compose pull
             docker compose up -d --build
