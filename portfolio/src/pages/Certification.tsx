@@ -34,7 +34,7 @@ setCertifications(res.data);
 
   return (
     <>
-     <h2 className="text-3xl font-bold text-center text-white">Mes certifications</h2>
+     <h2 className="text-3xl font-bold text-center text-white mt-5">Mes certifications</h2>
       <Grid items={certifications} renderItem={(certification:CertificationProps)=><Certification {...certification}/>}/>
       </>
     

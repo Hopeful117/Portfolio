@@ -36,7 +36,7 @@ setProjects(res.data);
 
   return (
     <>
-     <h2 className="text-3xl font-bold text-center text-white">Mes projets</h2>
+     <h2 className="text-3xl font-bold text-center text-white mt-5">Mes projets</h2>
       <PortfolioMasonry items={projects} renderItem={(projet:Projets)=><Projets {...projet}/>} />
     </>
     

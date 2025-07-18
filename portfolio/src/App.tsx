@@ -4,6 +4,7 @@ import {lazy,Suspense} from 'react';
 import Header from './components/Header';
 import { Routes, Route } from 'react-router-dom';
 import Accueil from './pages/Accueil'
+import Error from './pages/404'
 
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -36,6 +37,7 @@ function App() {
         </Suspense>}
         />
        </>
+       <Route path="*" element = {<Error/>}/>
       </Routes>
     </main>
 
