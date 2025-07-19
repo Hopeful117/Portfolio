@@ -16,10 +16,20 @@ services:
     env_file:
       - .env
 
+  frontend:
+    build:
+      context: ./portfolio
+    working_dir: /app
+    command: npm run build
+    volumes:
+      - ./portfolio:/app
+    depends_on:
+      - web
+
   nginx:
     build:
       context: ./nginx
-      dockerfile: nginx/Dockerfile
-   
+    
     depends_on:
       - web
+      - frontend
