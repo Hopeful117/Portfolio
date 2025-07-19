@@ -29,7 +29,8 @@ services:
   nginx:
     build:
       context: ./nginx
-    
+      volumes:
+      - ./portfolio/dist:/usr/share/nginx/html
     depends_on:
       - web
       - frontend
