@@ -5,7 +5,7 @@ services:
       context: ./portfolio    # chemin vers le Dockerfile frontend
     ports:
       - "3125:3125"
-      - "8080:80"         # expose frontend sur localhost:3000
+               
     restart: unless-stopped
 
   web:
@@ -20,6 +20,9 @@ services:
       - ./static:/app/static    # monte le code backend
     ports:
       - "5125:5125"
+    
+    env_file:
+      - .env
     
 
  
