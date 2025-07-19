@@ -1,34 +1,25 @@
+version: "3.9"
 
 services:
-  frontend:
-    build:
-      context: ./portfolio    # chemin vers le Dockerfile frontend
-    ports:
-      - "3125:3125"
-               
-    restart: unless-stopped
-
   web:
     build:
-      context: ./portfolio-api    # chemin vers le Dockerfile backend
+      context: ./portfolio-api
     command: python manage.py runserver 0.0.0.0:5125
     environment:
-    - DJANGO_ENV=prod
-    - DJANGO_DEBUG=False
+      - DJANGO_ENV=prod
+      - DJANGO_DEBUG=False
     volumes:
       - ./portfolio-api:/app
-      - ./static:/app/static    # monte le code backend
+      - ./static:/app/static
     ports:
       - "5125:5125"
-    
     env_file:
       - .env
-    
 
- 
-    
-
-  
-
-
-  
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+   
+    depends_on:
+      - web
