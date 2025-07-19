@@ -23,14 +23,16 @@ services:
     command: npm run build
     volumes:
       - ./portfolio:/app
+      - ./portfolio/dist:/dist  # pour partager le build avec nginx
     depends_on:
       - web
 
   nginx:
     build:
       context: ./nginx
-      volumes:
+    volumes:
       - ./portfolio/dist:/usr/share/nginx/html
+   
     depends_on:
       - web
       - frontend
