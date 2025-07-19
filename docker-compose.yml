@@ -16,16 +16,7 @@ services:
     env_file:
       - .env
 
-  frontend:
-    build:
-      context: ./portfolio
-    working_dir: /app
-    command: npm run build
-    volumes:
-      - ./portfolio:/app
-      - ./portfolio/dist:/dist  # pour partager le build avec nginx
-    depends_on:
-      - web
+ 
 
   nginx:
     build:
@@ -35,4 +26,4 @@ services:
    
     depends_on:
       - web
-      - frontend
+      
