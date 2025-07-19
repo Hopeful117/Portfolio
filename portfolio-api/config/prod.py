@@ -21,3 +21,9 @@ X_FRAME_OPTIONS = 'DENY'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "https://ludovic-brot.fr",
+    "https://www.ludovic-brot.fr",
+]
