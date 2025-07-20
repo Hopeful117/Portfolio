@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const API = axios.create({
-  baseURL: 'http://localhost:5125/api/', 
+  baseURL: '/api/', 
 });
 
 export const fetchProject = async () => {
