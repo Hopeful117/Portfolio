@@ -5,11 +5,13 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
- server: {
-  host: '0.0.0.0',
-  port: 5173,
-  strictPort: true,
-  allowedHosts: ['ludovic-brot.fr', 'www.ludovic-brot.fr']
-}
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
+    cors: true,
+    // désactive check d'origine
+    origin: 'https://ludovic-brot.fr'
+    }
 
 })
