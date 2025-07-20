@@ -1,14 +1,18 @@
-# === FRONTEND BUILD STAGE ===
-FROM node:20-alpine AS frontend-builder
+# === FRONTEND DEV STAGE ===
+FROM node:20-alpine
 
+# Création du dossier de travail
 WORKDIR /app
+
+# Copie des fichiers de dépendances et installation
 COPY package*.json ./
 RUN npm install
+
+# Copie du code source
 COPY . .
-RUN npm run build
 
-# === NGINX STAGE ===
-FROM nginx:alpine
+# Exposition du port de Vite (par défaut 5173, modifiable dans vite.config.ts)
+EXPOSE 5173
 
-COPY --from=frontend-builder /app/dist /usr/share/nginx/html
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+# Commande de démarrage du serveur de dev
+CMD ["npm", "run", "dev", "--", "--host"]
