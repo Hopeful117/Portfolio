@@ -23,7 +23,7 @@ services:
   frontend:
     build: ./portfolio
     ports:
-      - "80:80"
+      - "8081:80"
     volumes:
       - ./portfolio:/app
       - /app/node_modules
