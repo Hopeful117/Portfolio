@@ -13,7 +13,7 @@ services:
       - ./static:/app/static
     
     ports:
-      -"5125:5125"
+      - "5125:5125"
     env_file:
       - .env
 
