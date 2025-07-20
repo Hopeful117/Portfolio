@@ -5,10 +5,12 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  server: {
-    host: '0.0.0.0',
-    port: 3125,
-    strictPort: true,
-    allowedHosts: ['ludovic-brot.fr']
-  }
+ server: {
+  host: '0.0.0.0',
+  port: 3125,
+  strictPort: true,
+  cors: true,
+  origin: 'http://ludovic-brot.fr' // Important si tu fais SSR
+}
+
 })
