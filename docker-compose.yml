@@ -1,4 +1,4 @@
-version: "3.9"
+
 
 services:
   web:
@@ -16,14 +16,10 @@ services:
     env_file:
       - .env
 
- 
-
   nginx:
     build:
       context: ./nginx
     volumes:
       - ./portfolio/dist:/usr/share/nginx/html
-   
     depends_on:
       - web
-      
