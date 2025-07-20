@@ -11,6 +11,7 @@ services:
     volumes:
       - ./portfolio-api:/app
       - ./static:/app/static
+      - ./media:/app/media
     
     ports:
       - "5125:5125"
