@@ -9,8 +9,7 @@ export default defineConfig({
   host: '0.0.0.0',
   port: 5173,
   strictPort: true,
-  cors: true,
-  origin: 'http://ludovic-brot.fr' // Important si tu fais SSR
+  allowedHosts: ['ludovic-brot.fr', 'www.ludovic-brot.fr']
 }
 
 })
