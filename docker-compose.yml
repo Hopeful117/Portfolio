@@ -26,4 +26,5 @@ services:
       - ./portfolio:/app
       - /app/node_modules
     
-
+    ports:
+      - "3125:80"
