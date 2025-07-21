@@ -15,13 +15,12 @@ const Header: React.FC = () => {
         <nav className="md:space-x-6 flex md:justify-between md:flex-row  justify-between   md:mt-0 mt-5 font-bold">
       
           
-           <NavLink className="text-gray-700 dark:text-gray-200 hover:underline" to={'/'}>Accueil</NavLink>
-            <NavLink className="text-gray-700 dark:text-gray-200 hover:underline" to={'/about'}>About</NavLink>
+           <NavLink className={({isActive})=>isActive?"text-gray-700 dark:text-gray-200 hover:underline  underline" :"text-gray-700 dark:text-gray-200 hover:underline"} to={'/'}>Accueil</NavLink>
+            <NavLink className={({isActive})=>isActive?"text-gray-700 dark:text-gray-200 hover:underline  underline" :"text-gray-700 dark:text-gray-200 hover:underline"} to={'/about'}>About</NavLink>
         
-          <NavLink className="text-gray-700 dark:text-gray-200 hover:underline" to={'/projets'}>Projets</NavLink>
-
-          <NavLink className="text-gray-700 dark:text-gray-200 hover:underline" to={'/certifications'}>Certification</NavLink>
-          <NavLink className="text-gray-700 dark:text-gray-200 hover:underline" to={'/contact'}>Contact</NavLink>
+          <NavLink className={({isActive})=>isActive?"text-gray-700 dark:text-gray-200 hover:underline  underline" :"text-gray-700 dark:text-gray-200 hover:underline"} to={'/projets'}>Projets</NavLink>
+<NavLink className={({isActive})=>isActive?"text-gray-700 dark:text-gray-200 hover:underline  underline" :"text-gray-700 dark:text-gray-200 hover:underline"} to={'/certifications'}>Certification</NavLink>
+<NavLink className={({isActive})=>isActive?"text-gray-700 dark:text-gray-200 hover:underline  underline" :"text-gray-700 dark:text-gray-200 hover:underline"}to={'/contact'}>Contact</NavLink>
           
         </nav>
       </div>
