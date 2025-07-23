@@ -133,8 +133,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-if DEBUG:
-    CORS_ALLOWED_ORIGINS = [
-        "http://localhost:3000",  # ou 3125 selon ton port Vite
-        "http://127.0.0.1:3000",
-    ]
+

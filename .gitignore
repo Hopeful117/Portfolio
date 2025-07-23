@@ -1,3 +1,4 @@
 /Livrable
 prod.env
 dev.env
+.env

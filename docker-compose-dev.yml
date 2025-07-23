@@ -1,0 +1,32 @@
+
+
+services:
+  web:
+    build:
+      context: ./portfolio-api
+      dockerfile: Dockerfile.dev
+   
+    environment:
+      - DJANGO_ENV=dev
+      - DJANGO_DEBUG=True
+    volumes:
+      - ./portfolio-api:/app
+      - ./portfolio-api/static:/app/static
+      - ./portfolio-api/media:/app/media
+    ports:
+      - "5125:5125"
+    env_file:
+      - .env
+    depends_on:
+      - frontend
+
+  frontend:
+    build:
+      context: ./portfolio
+      dockerfile: Dockerfile.dev
+    
+    volumes:
+      - ./portfolio:/app
+      - /app/node_modules
+    ports:
+      - "3125:5173" # Vite par défaut sur 5173
