@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 
 const HomeSlider:React.FC = () => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full md:h-screen h-view">
       <Swiper
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         spaceBetween={50}
