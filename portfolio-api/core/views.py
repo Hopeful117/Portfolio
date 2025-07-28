@@ -2,8 +2,9 @@ from django.shortcuts import render
 from rest_framework import generics,permissions
 from .models import Project,Certification,Skill
 from .serializers import ProjectSerializer,CertificationSerializer,SkillSerializer
+from rest_framework.viewsets import ModelViewSet
 
-class ProjectListCreateView(generics.ListCreateAPIView):
+class ProjectListCreateView(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
@@ -12,7 +13,7 @@ class ProjectListCreateView(generics.ListCreateAPIView):
             return [permissions.IsAdminUser()]
         return [permissions.AllowAny()]
 
-class CertificationListCreateView(generics.ListCreateAPIView):
+class CertificationListCreateView(ModelViewSet):
     queryset=Certification.objects.all()
     serializer_class=CertificationSerializer
 
@@ -22,7 +23,7 @@ class CertificationListCreateView(generics.ListCreateAPIView):
         return [permissions.AllowAny()]
     
 
-class SkillListCreateView(generics.ListCreateAPIView):
+class SkillListCreateView(ModelViewSet):
     queryset=Skill.objects.all()
     serializer_class=SkillSerializer
 
@@ -30,3 +31,6 @@ class SkillListCreateView(generics.ListCreateAPIView):
         if self.request.method in ['PUT', 'PATCH', 'DELETE','POST']:
             return [permissions.IsAdminUser()]
         return [permissions.AllowAny()]
+    
+
+
